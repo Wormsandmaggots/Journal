@@ -4,7 +4,7 @@ project(OpenGL)
 set(CMAKE_CXX_STANDARD 23)
 
 # to add something, remember to properly include and link directories
-include_directories(${PROJECT_SOURCE_DIR}/Dependencies/GLFW/include/GLFW)
+include_directories(${PROJECT_SOURCE_DIR}/Dependencies/GLFW/include)
 link_directories(${PROJECT_SOURCE_DIR}/Dependencies/GLFW/lib)
 
 # add target
