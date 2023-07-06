@@ -6,6 +6,8 @@
 #include <string>
 #include "Logger.h"
 
+using namespace Journal;
+
 std::shared_ptr<spdlog::sinks::stdout_color_sink_mt> Logger::console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
 spdlog::logger Logger::logger = spdlog::logger("", console_sink);
 

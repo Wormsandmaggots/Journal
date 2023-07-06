@@ -50,3 +50,4 @@ endfunction()
 
 # Copy all DLL dependencies if not already present in output directory
 copy_dll_dependencies(${PROJECT_SOURCE_DIR}/../cmake-build-debug "${VENDOR_FILES}")
+copy_dll_dependencies(${PROJECT_SOURCE_DIR}/../cmake-build-debug "${LIB_FILES}")

@@ -5,6 +5,10 @@
 #ifndef JOURNAL_JOURNAL_H
 #define JOURNAL_JOURNAL_H
 
-#include "Libs/JournalLib/include/Application.h"
+#include "Application.h"
+
+//----------ENTRYPOINT------------------
+#include "EntryPoint.h"
+//---------------------------------------
 
 #endif //JOURNAL_JOURNAL_H

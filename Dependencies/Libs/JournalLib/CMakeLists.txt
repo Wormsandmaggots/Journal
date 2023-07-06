@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 23)
 
 set(dir ${PROJECT_SOURCE_DIR}/lib)
 
+
 #put dll to cmake-build-debug in dir where exe is
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${dir})
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${dir})

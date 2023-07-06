@@ -6,9 +6,17 @@
 #define JOURNAL_APPLICATION_H
 #include "Core.h"
 
-class JR_API Application {
+namespace Journal{
+    class JR_API Application {
+    public:
+        Application() = default;
+        virtual ~Application() = default;
 
-};
+        void Run();
+    };
 
+    //to be defined in client
+    Application* CreateApplication();
+}
 
 #endif //JOURNAL_APPLICATION_H

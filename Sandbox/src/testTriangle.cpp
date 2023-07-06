@@ -3,13 +3,15 @@
 #include "Logger.h"
 #include <iostream>
 
+using namespace Journal;
+
 int OpenGL();
 
 namespace Journal {
      void Print();
 }
 
-int main()
+int testTriangle()
 {
     return OpenGL();
 }
