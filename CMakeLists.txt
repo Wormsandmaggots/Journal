@@ -4,12 +4,14 @@ project(Journal)
 
 set(CMAKE_CXX_STANDARD 23)
 
+message(WARNING "$ENV{VULKAN_SDK}")
 
 # to add something, remember to properly include and link directories
 include_directories(
         Dependencies/Vendor/GLFW/include
         Dependencies/Vendor/GLEW/include
         Dependencies/Vendor/spdlog/include
+        Dependencies/Vendor/GLM/include
         Dependencies/Libs/JournalLib/include
         include
         )
@@ -24,11 +26,15 @@ link_directories(
 
 #get all files matching format
 file(GLOB src "src/*.cpp")
+file(GLOB vulkan_src "src/Vulkan/*.cpp")
 #file(GLOB include "include/*.h")
 
 
 # add target
-add_executable(Journal Sandbox/src/main.cpp ${src})
+add_executable(Journal Sandbox/src/main.cpp ${src} ${vulkan_src})
+
+
+find_package(Vulkan REQUIRED)
 
 
 # remember to set paths to easier access
@@ -44,6 +50,7 @@ add_subdirectory(Dependencies)
 set(DEPENDENCIES
         ${glfw}
         ${glew}
+        ${Vulkan_LIBRARIES}
         JournalLib
         )
 
@@ -72,3 +79,4 @@ endforeach ()
 # remember to add to target
 target_compile_definitions(Journal PUBLIC GLEW_STATIC JR_WINDOWS_PLATFORM)
 target_link_libraries(Journal ${DEPENDENCIES} opengl32 -static)
+target_include_directories(Journal PRIVATE ${Vulkan_INCLUDE_DIRS})

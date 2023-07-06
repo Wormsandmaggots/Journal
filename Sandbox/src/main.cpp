@@ -3,11 +3,18 @@
 #include "Logger.h"
 #include <iostream>
 
+int OpenGL();
+
 namespace Journal {
      void Print();
 }
 
 int main()
+{
+    return OpenGL();
+}
+
+int OpenGL()
 {
     Journal::Print();
 
@@ -68,5 +75,6 @@ int main()
     }
 
     glfwTerminate();
+
     return 0;
 }
