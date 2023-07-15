@@ -14,4 +14,7 @@
 #else
     #error "Platform not supported"
 #endif
+
+#define BIT(x) (1 << (x))
+
 #endif //JOURNAL_CORE_H
